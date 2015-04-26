@@ -14,4 +14,5 @@ require 'jetty-webapp-9.3.0.M2.jar'
 require 'jetty-xml-9.3.0.M2.jar'
 
 require 'minigrails/minigrails'
+require 'minigrails/task_helper'
 require 'minigrails/commands'

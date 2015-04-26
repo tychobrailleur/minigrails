@@ -11,7 +11,8 @@ Gem::Specification.new do |s|
   s.executables = ['minigrails']
   s.platform = 'java'
 
-  files = Dir.glob("lib/**/*.rb") + 
+  files = Dir.glob("lib/**/*.rb") +
+          Dir.glob("lib/**/*.liquid") +
 	      Dir.glob("src/**/*.{java}") +
           Dir.glob("lib/**/*.jar")
 

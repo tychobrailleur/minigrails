@@ -5,6 +5,11 @@ $:.unshift(File.expand_path(File.join(File.dirname(__FILE__), "..", "lib")))
 require 'optparse'
 require 'minigrails'
 
+unless ENV['MINIGRAILS_HOME']
+  puts "Please set MINIGRAILS_HOME."
+  exit(1)
+end
+
 help = <<HELP
 A mini-implementation of Grails.  But in JRuby.
 HELP
