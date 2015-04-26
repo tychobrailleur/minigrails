@@ -31,6 +31,8 @@ opts.parse!
 if ARGV.size == 2
   options[:command] = ARGV[0]
   options[:name] = ARGV[1]
+elsif ARGV.size == 1
+  options[:command] = ARGV[0]
 else
   puts "Incorrect parameters.  Please `minigrails --help` for usage."
   exit(1)

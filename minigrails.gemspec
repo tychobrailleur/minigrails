@@ -12,9 +12,8 @@ Gem::Specification.new do |s|
   s.platform = 'java'
 
   files = Dir.glob("lib/**/*.rb") + 
-	      Dir.glob("src/**/*.{java}")
-
-  files << "target/minigrails-#{s.version}.jar"
+	      Dir.glob("src/**/*.{java}") +
+          Dir.glob("lib/**/*.jar")
 
   s.files = files
   s.add_development_dependency 'rake-compiler'

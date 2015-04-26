@@ -7,6 +7,8 @@ module Minigrails
         create_app.run(options)
       when 'run-app'
         puts 'Running...'
+        run_app = Command::RunApp.new
+        run_app.run(options)
       else
         raise ArgumentError, "#{options[:command]} is not a valid command."
       end
