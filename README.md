@@ -1,9 +1,8 @@
 # Build
 
-First, compile java classes with Buildr:
+First, package the application using maven:
 
-    bundle exec buildr compile package
-
+    mvn package
 
 Download dependencies:
 

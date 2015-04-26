@@ -13,6 +13,8 @@ public class StartServer {
 
             WebAppContext webapp = new WebAppContext();
             webapp.setContextPath("/");
+            webapp.setResourceBase("target/webapp");
+            webapp.setDescriptor("target/webapp/WEB-INF/web.xml");
             server.setHandler(webapp);
 
             server.start();
