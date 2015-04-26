@@ -1,0 +1,39 @@
+#!/usr/bin/env jruby
+
+$:.unshift(File.expand_path(File.join(File.dirname(__FILE__), "..", "lib")))
+
+require 'optparse'
+require 'minigrails'
+
+help = <<HELP
+A mini-implementation of Grails.  But in JRuby.
+HELP
+
+options = {}
+
+opts = OptionParser.new do |opts|
+  opts.banner = help
+
+  opts.on_tail("-h", "--help", "Show this message") do
+    puts opts
+    exit
+  end
+
+  opts.on("--version", "Display current version") do
+    puts "Minigrails " + Minigrails::Version::STRING
+    exit 0
+  end
+end
+
+# Read command line options into `options` hash
+opts.parse!
+
+if ARGV.size == 2
+  options[:command] = ARGV[0]
+  options[:name] = ARGV[1]
+else
+  puts "Incorrect parameters.  Please `minigrails --help` for usage."
+  exit(1)
+end
+
+Minigrails::Minigrails.new.run(options)
